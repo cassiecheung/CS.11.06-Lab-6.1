@@ -70,10 +70,10 @@ public class AdventureTime {
      */
     public static int challengeThree(String fileName) throws FileNotFoundException {
         String[] array = readStringFile(fileName);
-        int x = 0;
-        int y = 0;
+        int x = 0; // horizontal
+        int y = 0; // vertical/depth
         for (String single: array) {
-            int value = Integer.parseInt(single.substring(single.length() - 1));
+            int value = Integer.parseInt(single.substring(single.length() - 1)); // getting the int value
             if (single.contains("forward")) {
                 x = x + value;
             }
@@ -97,11 +97,11 @@ public class AdventureTime {
      */
     public static int challengeFour(String filename) throws FileNotFoundException {
         String[] array = readStringFile("InputThreeFour.txt");
-        int x = 0;
-        int y = 0;
+        int x = 0; // horizontal
+        int y = 0; // vertical/depth
         int aim = 0;
         for (String single: array) {
-            int value = Integer.parseInt(single.substring(single.length() - 1));
+            int value = Integer.parseInt(single.substring(single.length() - 1)); // getting the int value
             if (single.contains("forward")) {
                 x = x + value;
                 y = y + (aim * value);
@@ -113,7 +113,7 @@ public class AdventureTime {
                 aim = aim - value;
             }
         }
-        return x * y;
+        return x * y; // ans: 1592426537
     }
 
     /** This method will write the values passed as challengeOne, challengeTwo, challengeThree, and challengeFour to a text file.
